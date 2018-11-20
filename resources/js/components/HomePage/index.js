@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
                     <div className="list-group">
                         {this.props.schools.map(schools => 
                             
-                                <a href="#" className="list-group-item list-group-item-action">
+                                <a href={schools.id} className="list-group-item list-group-item-action">
                                     {schools.school_name}
                                 </a>
                         

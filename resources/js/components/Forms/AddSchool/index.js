@@ -16,7 +16,7 @@ import axios from 'axios';
         };
 
         this.handleChange = this.handleChange.bind(this);
-        this.submitData = this.submitData.bind(this);
+       // this.submitData = this.submitData.bind(this);
     }
 
     handleChange(e){
@@ -36,14 +36,14 @@ import axios from 'axios';
         
         
     }
-    submitData(e){
+    submitData =(e) => {
 
 
         e.preventDefault();  
        // console.log(e);  
         console.log(this.state.school_address);
 
-        axios.post('/api/students/create', {
+        axios.post('/api/schools/create', {
           headers: {
             'content-type': 'application/json',
           },
