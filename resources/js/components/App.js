@@ -6,9 +6,8 @@ import Central from './Central';
 import Harbor from './Harbor';
 import Western from './Western';
 import Thane from './Thane';
-// import HomePage from './HomePage';
 import HomePageContainer from './HomePage/homePageContainer';
-import AddSchool from './Forms/AddSchool';
+import AddSchool from './Forms/AddSchool/index';
  class App extends Component {
   render() {
     return (
