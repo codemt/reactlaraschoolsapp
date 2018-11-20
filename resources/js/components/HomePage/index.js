@@ -17,7 +17,7 @@ class HomePage extends Component {
                 */}
                 <h1> List of Schools </h1>
                 <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action active">
+                    <a href="#" class="list-group-item list-group-item-action">
                         School Name 1 
                     </a>
                     <a href="#" class="list-group-item list-group-item-action">School Name 2
