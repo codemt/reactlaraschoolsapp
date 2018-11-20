@@ -8,6 +8,7 @@ import Western from './Western';
 import Thane from './Thane';
 // import HomePage from './HomePage';
 import HomePageContainer from './HomePage/homePageContainer';
+import AddSchool from './Forms/AddSchool';
  class App extends Component {
   render() {
     return (
@@ -19,6 +20,7 @@ import HomePageContainer from './HomePage/homePageContainer';
                     <Route  path='/harbor' exact strict component={Harbor}/>
                     <Route  path='/western' exact strict component={Western}/>
                     <Route  path='/thane' exact strict component={Thane}/>
+                    <Route  path='/addschool' exact strict component={AddSchool}/>
             </div>
         </Router>
     )

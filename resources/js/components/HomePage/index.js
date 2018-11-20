@@ -1,11 +1,19 @@
 import React, { Component } from 'react'
-
+import { Link } from 'react-router-dom';
  class SchoolsList extends Component {
 
   render() {
     return (
         <div class="container"> 
-                    <h1> List of Schools </h1>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1> List of Schools </h1> 
+                    </div>
+                    <div class="col-md-6">
+                    <Link   to='/addschool' class="btn btn-secondary">Add School</Link>
+                    </div>
+                </div>
+                    
                     <div className="list-group">
                         {this.props.schools.map(schools => 
                             

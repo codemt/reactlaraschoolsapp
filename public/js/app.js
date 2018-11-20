@@ -58930,6 +58930,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Western__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Thane__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__HomePage_homePageContainer__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__Forms_AddSchool__ = __webpack_require__(105);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -58947,6 +58948,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 // import HomePage from './HomePage';
+
 
 
 var App = function (_Component) {
@@ -58968,11 +58970,12 @@ var App = function (_Component) {
           'div',
           null,
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__NavBar__["a" /* default */], null),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/home', exact: true, strict: true, component: __WEBPACK_IMPORTED_MODULE_8__HomePage_homePageContainer__["a" /* default */] }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/central', exact: true, strict: true, component: __WEBPACK_IMPORTED_MODULE_4__Central__["a" /* default */] }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/harbor', exact: true, strict: true, component: __WEBPACK_IMPORTED_MODULE_5__Harbor__["a" /* default */] }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/western', exact: true, strict: true, component: __WEBPACK_IMPORTED_MODULE_6__Western__["a" /* default */] }),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/thane', exact: true, strict: true, component: __WEBPACK_IMPORTED_MODULE_7__Thane__["a" /* default */] })
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["d" /* Route */], { path: '/home', exact: true, strict: true, component: __WEBPACK_IMPORTED_MODULE_8__HomePage_homePageContainer__["a" /* default */] }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["d" /* Route */], { path: '/central', exact: true, strict: true, component: __WEBPACK_IMPORTED_MODULE_4__Central__["a" /* default */] }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["d" /* Route */], { path: '/harbor', exact: true, strict: true, component: __WEBPACK_IMPORTED_MODULE_5__Harbor__["a" /* default */] }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["d" /* Route */], { path: '/western', exact: true, strict: true, component: __WEBPACK_IMPORTED_MODULE_6__Western__["a" /* default */] }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["d" /* Route */], { path: '/thane', exact: true, strict: true, component: __WEBPACK_IMPORTED_MODULE_7__Thane__["a" /* default */] }),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["d" /* Route */], { path: '/addschool', exact: true, strict: true, component: __WEBPACK_IMPORTED_MODULE_9__Forms_AddSchool__["a" /* default */] })
         )
       );
     }
@@ -59018,7 +59021,7 @@ var NavBar = function (_Component) {
                 'nav',
                 { className: 'navbar navbar-expand-lg navbar-light bg-light' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* NavLink */],
+                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* NavLink */],
                     { className: 'navbar-brand', to: '/home', activeClassName: 'active' },
                     'Schools of Mumbai'
                 ),
@@ -59037,7 +59040,7 @@ var NavBar = function (_Component) {
                             'li',
                             { className: 'nav-item active' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* NavLink */],
+                                __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* NavLink */],
                                 { className: 'nav-link', to: '/central', activeClassName: 'active' },
                                 'Central'
                             )
@@ -59046,7 +59049,7 @@ var NavBar = function (_Component) {
                             'li',
                             { className: 'nav-item' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* NavLink */],
+                                __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* NavLink */],
                                 { className: 'nav-link', to: '/harbor', activeClassName: 'active' },
                                 'Harbor'
                             )
@@ -59055,7 +59058,7 @@ var NavBar = function (_Component) {
                             'li',
                             { className: 'nav-item' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* NavLink */],
+                                __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* NavLink */],
                                 { className: 'nav-link', to: '/western', activeClassName: 'active' },
                                 'Western'
                             )
@@ -59064,7 +59067,7 @@ var NavBar = function (_Component) {
                             'li',
                             { className: 'nav-item' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* NavLink */],
+                                __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["c" /* NavLink */],
                                 { className: 'nav-link', to: '/thane', activeClassName: 'active' },
                                 'Thane'
                             )
@@ -60620,17 +60623,17 @@ var generatePath = function generatePath() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HashRouter__ = __webpack_require__(80);
 /* unused harmony reexport HashRouter */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Link__ = __webpack_require__(67);
-/* unused harmony reexport Link */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_2__Link__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__ = __webpack_require__(81);
 /* unused harmony reexport MemoryRouter */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__NavLink__ = __webpack_require__(83);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_4__NavLink__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_4__NavLink__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Prompt__ = __webpack_require__(85);
 /* unused harmony reexport Prompt */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Redirect__ = __webpack_require__(87);
 /* unused harmony reexport Redirect */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Route__ = __webpack_require__(68);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_7__Route__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_7__Route__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Router__ = __webpack_require__(63);
 /* unused harmony reexport Router */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__StaticRouter__ = __webpack_require__(89);
@@ -63432,6 +63435,7 @@ var Thane = function (_Component) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_router_dom__ = __webpack_require__(72);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -63439,6 +63443,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -63452,23 +63457,40 @@ var SchoolsList = function (_Component) {
     }
 
     _createClass(SchoolsList, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "div",
-                { "class": "container" },
+                'div',
+                { 'class': 'container' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "h1",
-                    null,
-                    " List of Schools "
+                    'div',
+                    { 'class': 'row' },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { 'class': 'col-md-6' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'h1',
+                            null,
+                            ' List of Schools '
+                        )
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'div',
+                        { 'class': 'col-md-6' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* Link */],
+                            { to: '/addschool', 'class': 'btn btn-secondary' },
+                            'Add School'
+                        )
+                    )
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "list-group" },
+                    'div',
+                    { className: 'list-group' },
                     this.props.schools.map(function (schools) {
                         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "a",
-                            { href: "#", className: "list-group-item list-group-item-action" },
+                            'a',
+                            { href: '#', className: 'list-group-item list-group-item-action' },
                             schools.school_name
                         );
                     })
@@ -63552,6 +63574,119 @@ var HomePageContainer = function (_Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (HomePageContainer);
+
+/***/ }),
+/* 104 */,
+/* 105 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var AddSchool = function (_Component) {
+    _inherits(AddSchool, _Component);
+
+    function AddSchool() {
+        _classCallCheck(this, AddSchool);
+
+        return _possibleConstructorReturn(this, (AddSchool.__proto__ || Object.getPrototypeOf(AddSchool)).apply(this, arguments));
+    }
+
+    _createClass(AddSchool, [{
+        key: "render",
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                "div",
+                { className: "container" },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    "form",
+                    null,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        "fieldset",
+                        null,
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "div",
+                            { "class": "form-group" },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "label",
+                                { "for": "exampleInputEmail1" },
+                                "Name of School"
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { type: "email", "class": "form-control", name: "school_name", id: "exampleInputEmail1", "aria-describedby": "emailHelp", placeholder: "Enter School Name" }),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "small",
+                                { id: "emailHelp", "class": "form-text text-muted" },
+                                "We'll never share your private data with anyone else."
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "div",
+                            { "class": "form-group" },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "label",
+                                { "for": "exampleSelect1" },
+                                "School Board"
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "select",
+                                { "class": "form-control", id: "school_board" },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "option",
+                                    { value: "SSC" },
+                                    "SSC"
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "option",
+                                    { value: "CBSC" },
+                                    "CBSC"
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "option",
+                                    { value: "ICSC" },
+                                    "ICSC"
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    "option",
+                                    { value: "International" },
+                                    "International"
+                                )
+                            )
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "div",
+                            { "class": "form-group" },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                "label",
+                                { "for": "exampleTextarea" },
+                                "School Address"
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("textarea", { "class": "form-control", name: "school_address", id: "exampleTextarea", rows: "3" })
+                        ),
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            "button",
+                            { type: "submit", "class": "btn btn-primary" },
+                            "Submit"
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return AddSchool;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (AddSchool);
 
 /***/ })
 /******/ ]);
