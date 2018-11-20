@@ -6,14 +6,15 @@ import Central from './Central';
 import Harbor from './Harbor';
 import Western from './Western';
 import Thane from './Thane';
-import HomePage from './HomePage';
+// import HomePage from './HomePage';
+import HomePageContainer from './HomePage/homePageContainer';
  class App extends Component {
   render() {
     return (
         <Router>
              <div>
                      <NavBar />
-                     <Route path='/home' exact strict component={HomePage} />
+                     <Route path='/home' exact strict component={HomePageContainer} />
                     <Route  path='/central' exact strict component={Central}/>
                     <Route  path='/harbor' exact strict component={Harbor}/>
                     <Route  path='/western' exact strict component={Western}/>
