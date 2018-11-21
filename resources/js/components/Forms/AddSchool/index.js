@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import history from '../../History';
  class AddSchool extends Component {
 
     constructor(props) {
@@ -59,7 +60,9 @@ import axios from 'axios';
           console.log(response);
              setTimeout(() => {
             // return <img alt="loader"  src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
-             window.location = "/home";
+            // window.location = "/home";
+            history.push('/home');
+
 
             },1000)
          // return <Redirect to='/inquiries' />

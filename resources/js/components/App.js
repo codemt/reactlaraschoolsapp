@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
 import NavBar from './NavBar';
-import { BrowserRouter as Router, Switch , Route } from 'react-router-dom';
+import { Router, Switch , Route  } from 'react-router-dom';
 import Central from './Central';
 import Harbor from './Harbor';
 import Western from './Western';
 import Thane from './Thane';
 import HomePageContainer from './HomePage/homePageContainer';
 import AddSchool from './Forms/AddSchool/index';
+import history from './History';
  class App extends Component {
   render() {
     return (
-        <Router>
+        <Router history={history}>
              <div>
                      <NavBar />
                      <Route path='/home' exact strict component={HomePageContainer} />
