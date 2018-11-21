@@ -15,15 +15,28 @@ import { Link } from 'react-router-dom';
                 </div>
                     
                     <div className="list-group">
-                        {this.props.schools.map(schools => 
+                    <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">School Name</th>
+                        <th scope="col">School Address</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {this.props.schools.map(schools => 
                             
-                                <a href={schools.id} className="list-group-item list-group-item-action">
+                      <tr>
+                            <td>
+                             <a href={schools.id}>
                                     {schools.school_name}
-                                </a>
-                        
-                        
-                        )}        
-                </div>
+                                </a> 
+                            </td>
+                            <td> {schools.school_address} </td>
+                         </tr>
+                    )} 
+                    </tbody>
+                    </table>       
+                     </div>
 
     </div>
     

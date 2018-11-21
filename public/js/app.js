@@ -63632,13 +63632,54 @@ var SchoolsList = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'list-group' },
-                    this.props.schools.map(function (schools) {
-                        return _react2.default.createElement(
-                            'a',
-                            { href: schools.id, className: 'list-group-item list-group-item-action' },
-                            schools.school_name
-                        );
-                    })
+                    _react2.default.createElement(
+                        'table',
+                        { 'class': 'table table-hover' },
+                        _react2.default.createElement(
+                            'thead',
+                            null,
+                            _react2.default.createElement(
+                                'tr',
+                                null,
+                                _react2.default.createElement(
+                                    'th',
+                                    { scope: 'col' },
+                                    'School Name'
+                                ),
+                                _react2.default.createElement(
+                                    'th',
+                                    { scope: 'col' },
+                                    'School Address'
+                                )
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'tbody',
+                            null,
+                            this.props.schools.map(function (schools) {
+                                return _react2.default.createElement(
+                                    'tr',
+                                    null,
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        _react2.default.createElement(
+                                            'a',
+                                            { href: schools.id },
+                                            schools.school_name
+                                        )
+                                    ),
+                                    _react2.default.createElement(
+                                        'td',
+                                        null,
+                                        ' ',
+                                        schools.school_address,
+                                        ' '
+                                    )
+                                );
+                            })
+                        )
+                    )
                 )
             );
         }
