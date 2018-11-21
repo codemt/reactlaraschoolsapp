@@ -9,6 +9,7 @@ import Thane from './Thane';
 import HomePageContainer from './HomePage/homePageContainer';
 import AddSchool from './Forms/AddSchool/index';
 import history from './History';
+import Spinner from './Spinners';
  class App extends Component {
   render() {
     return (
@@ -21,6 +22,7 @@ import history from './History';
                     <Route  path='/western' exact strict component={Western}/>
                     <Route  path='/thane' exact strict component={Thane}/>
                     <Route  path='/addschool' exact strict component={AddSchool}/>
+                    <Route  path='/spinner' exact strict component={Spinner}/>
             </div>
         </Router>
     )

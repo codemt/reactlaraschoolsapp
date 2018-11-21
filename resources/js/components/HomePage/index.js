@@ -1,8 +1,33 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
+import logo from '../Spinners/logo.svg';
+import { Pagination } from 'react-js-pagination';
+import Spinner from '../Spinners/index';
+import { Facebook } from 'react-content-loader'
  class SchoolsList extends Component {
 
+   
+    state ={
+
+        loading : true
+
+    }
+
+    componentDidMount() {
+        // the setTimeout just simulates an async action, after which the component will render the content
+        setTimeout(() => this.setState({ loading: false }), 1500);
+      }
+      
+
+
   render() {
+   
+    const { loading } = this.state;
+
+    // show loader for some time before showing the list of schools
+    if(loading) {
+        return <Facebook />; 
+    }
     return (
         <div class="container"> 
                 <div class="row">
@@ -25,19 +50,19 @@ import { Link } from 'react-router-dom';
                     <tbody>
                     {this.props.schools.map(schools => 
                             
-                      <tr>
+                        <tr>
                             <td>
-                             <a href={schools.id}>
-                                    {schools.school_name}
-                                </a> 
+                             <a  href={schools.id}>  {schools.school_name} </a> 
                             </td>
                             <td> {schools.school_address} </td>
                          </tr>
+                        
                     )} 
-                    </tbody>
-                    </table>       
+                    </tbody>                            
+                    </table>     
+                    
                      </div>
-
+                    
     </div>
     
     )
