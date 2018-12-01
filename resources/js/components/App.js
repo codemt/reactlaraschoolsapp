@@ -10,7 +10,6 @@ import HomePageContainer from './HomePage/homePageContainer';
 import AddSchool from './Forms/AddSchool/index';
 import history from './History';
 import Spinner from './Spinners';
-import Bars from './Spinners/bars.svg';
 import ContentLoader from "react-content-loader"
  class App extends Component {
 
