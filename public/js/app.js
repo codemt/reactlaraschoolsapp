@@ -69154,6 +69154,8 @@ var _History2 = _interopRequireDefault(_History);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -69163,13 +69165,68 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var EditForm = function (_Component) {
   _inherits(EditForm, _Component);
 
-  function EditForm() {
+  function EditForm(props) {
     _classCallCheck(this, EditForm);
 
-    return _possibleConstructorReturn(this, (EditForm.__proto__ || Object.getPrototypeOf(EditForm)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (EditForm.__proto__ || Object.getPrototypeOf(EditForm)).call(this, props));
+
+    _this.submitData = function (e) {
+
+      e.preventDefault();
+      // console.log(e);  
+      console.log(_this.state.school_address);
+
+      axios.post('/api/schools/create', {
+        headers: {
+          'content-type': 'application/json'
+        },
+        school_name: _this.state.school_name,
+        school_board: _this.state.school_board,
+        school_address: _this.state.school_address
+
+      }).then(function (response) {
+
+        console.log(response);
+        setTimeout(function () {
+          // return <img alt="loader"  src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
+          // window.location = "/home";
+          _History2.default.push('/');
+        }, 1000);
+        // return <Redirect to='/inquiries' />
+      }).catch(function (error) {
+        console.log(error);
+        alert('some error Occured');
+      });
+    };
+
+    _this.state = {
+
+      school_name: '',
+      school_board: '',
+      school_address: ''
+
+    };
+
+    _this.handleChange = _this.handleChange.bind(_this);
+    // this.submitData = this.submitData.bind(this);
+    return _this;
   }
 
   _createClass(EditForm, [{
+    key: 'handleChange',
+    value: function handleChange(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      // Set State , and log new value of state.
+      this.setState(_defineProperty({}, e.target.name, e.target.value), function () {
+
+        console.log("School Name is:", _this2.state.school_name);
+        console.log("School Board  is :", _this2.state.school_board);
+        console.log("School Address is :", _this2.state.school_address);
+      });
+    }
+  }, {
     key: 'navigate',
     value: function navigate(e) {
 
@@ -69181,6 +69238,7 @@ var EditForm = function (_Component) {
     key: 'render',
     value: function render() {
 
+      var SchoolId = _react2.default.createElement('input', { type: 'hidden', className: 'form-control', name: 'school_id', 'aria-describedby': 'emailHelp', value: this.props.edit.id });
       var SchoolName = _react2.default.createElement('input', { type: 'text', onChange: this.handleChange, className: 'form-control', name: 'school_name', 'aria-describedby': 'emailHelp', placeholder: 'Enter School Name', value: this.props.edit.school_name });
 
       var SchoolBoard = _react2.default.createElement(
@@ -69256,6 +69314,7 @@ var EditForm = function (_Component) {
                 'We\'ll never share your private data with anyone else.'
               )
             ),
+            SchoolId,
             SchoolBoard,
             SchoolAddress,
             _react2.default.createElement(

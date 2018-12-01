@@ -43,6 +43,13 @@ class SchoolController extends Controller
 
 
     }
+    public function update(Request $request){
+
+
+                
+
+
+    }
 
 
 

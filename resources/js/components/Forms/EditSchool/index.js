@@ -4,6 +4,78 @@ class EditForm extends Component {
 
 
 
+  constructor(props) {
+
+
+    super(props);
+    this.state = {
+    
+
+        school_name : '',
+        school_board: '',
+        school_address : '',
+
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+   // this.submitData = this.submitData.bind(this);
+}
+
+handleChange(e){
+
+  
+    e.preventDefault();
+    // Set State , and log new value of state.
+    this.setState({ [e.target.name]: e.target.value }, () => {
+
+      console.log("School Name is:", this.state.school_name);
+      console.log("School Board  is :", this.state.school_board);
+      console.log("School Address is :", this.state.school_address);
+     
+
+    });
+
+    
+    
+}
+submitData =(e) => {
+
+
+    e.preventDefault();  
+   // console.log(e);  
+    console.log(this.state.school_address);
+
+    axios.post('/api/schools/create', {
+      headers: {
+        'content-type': 'application/json',
+      },
+      school_name: this.state.school_name,
+      school_board: this.state.school_board,
+      school_address : this.state.school_address,
+      
+    },)
+    .then(function (response) {
+
+
+
+      console.log(response);
+         setTimeout(() => {
+        // return <img alt="loader"  src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
+        // window.location = "/home";
+        history.push('/');
+
+
+        },1000)
+     // return <Redirect to='/inquiries' />
+        })
+    .catch(function (error) {
+      console.log(error);
+      alert('some error Occured');
+    });
+   
+      
+
+}
   navigate(e){
 
       e.preventDefault();
@@ -11,9 +83,19 @@ class EditForm extends Component {
       history.push('/');
 
   }
+
+
   render() {
 
 
+
+    const SchoolId = (
+
+      
+      <input type="hidden"  className="form-control" name="school_id" aria-describedby="emailHelp"   value={this.props.edit.id} />
+    
+
+  );
     const SchoolName = (
 
       
@@ -56,6 +138,7 @@ class EditForm extends Component {
                 {SchoolName}
                 <small id="emailHelp" className="form-text text-muted">We'll never share your private data with anyone else.</small>
                 </div>
+                {SchoolId}
                 {SchoolBoard}
                 {SchoolAddress}
                 <div class="row">
