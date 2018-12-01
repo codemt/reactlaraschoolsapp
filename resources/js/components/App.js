@@ -11,6 +11,7 @@ import AddSchool from './Forms/AddSchool/index';
 import history from './History';
 import Spinner from './Spinners';
 import ContentLoader from "react-content-loader"
+import EditSchool from './Forms/EditSchool';
  class App extends Component {
 
 
@@ -38,7 +39,7 @@ componentDidMount() {
           <ContentLoader 
                 
                   
-                  speed={2}
+                   speed={2}
                    style={{width: '100%', height: '100px'}}
                 
           >
@@ -111,6 +112,7 @@ componentDidMount() {
                     <Route  path='/thane' exact strict component={Thane}/>
                     <Route  path='/addschool' exact strict component={AddSchool}/>
                     <Route  path='/spinner' exact strict component={Spinner}/>
+                    <Route  path='/edit/:id' component={EditSchool}/>
             </div>
         </Router>
     )

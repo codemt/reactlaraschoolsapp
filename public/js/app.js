@@ -16304,7 +16304,7 @@ exports.default = (0, _history.createBrowserHistory)();
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(47);
-module.exports = __webpack_require__(163);
+module.exports = __webpack_require__(162);
 
 
 /***/ }),
@@ -38613,13 +38613,13 @@ var _Spinners = __webpack_require__(37);
 
 var _Spinners2 = _interopRequireDefault(_Spinners);
 
-var _bars = __webpack_require__(162);
-
-var _bars2 = _interopRequireDefault(_bars);
-
 var _reactContentLoader = __webpack_require__(19);
 
 var _reactContentLoader2 = _interopRequireDefault(_reactContentLoader);
+
+var _EditSchool = __webpack_require__(164);
+
+var _EditSchool2 = _interopRequireDefault(_EditSchool);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38757,7 +38757,8 @@ var App = function (_Component) {
                          _react2.default.createElement(_reactRouterDom.Route, { path: '/western', exact: true, strict: true, component: _Western2.default }),
                          _react2.default.createElement(_reactRouterDom.Route, { path: '/thane', exact: true, strict: true, component: _Thane2.default }),
                          _react2.default.createElement(_reactRouterDom.Route, { path: '/addschool', exact: true, strict: true, component: _index2.default }),
-                         _react2.default.createElement(_reactRouterDom.Route, { path: '/spinner', exact: true, strict: true, component: _Spinners2.default })
+                         _react2.default.createElement(_reactRouterDom.Route, { path: '/spinner', exact: true, strict: true, component: _Spinners2.default }),
+                         _react2.default.createElement(_reactRouterDom.Route, { path: '/edit/:id', component: _EditSchool2.default })
                     )
                );
           }
@@ -64616,11 +64617,10 @@ var SchoolsList = function (_Component) {
                                         'td',
                                         null,
                                         _react2.default.createElement(
-                                            'a',
-                                            { href: schools.id },
-                                            '  ',
-                                            schools.school_name,
-                                            ' '
+                                            _reactRouterDom.Link,
+                                            { to: 'edit/' + schools.id },
+                                            ' ',
+                                            schools.school_name
                                         )
                                     ),
                                     _react2.default.createElement(
@@ -69107,13 +69107,100 @@ exports.default = AddSchool;
 /* 162 */
 /***/ (function(module, exports) {
 
-module.exports = "/images/bars.svg?57db886a8d805168105767a9172884e1";
+// removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 163 */
-/***/ (function(module, exports) {
+/* 163 */,
+/* 164 */
+/***/ (function(module, exports, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var EditSchool = function (_Component) {
+  _inherits(EditSchool, _Component);
+
+  function EditSchool(props) {
+    _classCallCheck(this, EditSchool);
+
+    var _this = _possibleConstructorReturn(this, (EditSchool.__proto__ || Object.getPrototypeOf(EditSchool)).call(this, props));
+
+    _this.state = {
+
+      data: []
+
+    };
+
+    return _this;
+  }
+
+  _createClass(EditSchool, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+
+      this.editSchool();
+      console.log('i am loaded');
+    }
+  }, {
+    key: 'editSchool',
+    value: function editSchool() {
+      var _this2 = this;
+
+      console.log('called');
+
+      fetch('api/schools/{id}').then(function (response) {
+        return response.json();
+      }).then(function (responseJson) {
+        console.log(responseJson);
+        _this2.setState({ data: responseJson, animating: false });
+      }).catch(function (error) {
+        console.error(error);
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'p',
+          null,
+          ' Edit School here '
+        ),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'p',
+          null,
+          ' Edit School '
+        )
+      );
+    }
+  }]);
+
+  return EditSchool;
+}(_react.Component);
+
+exports.default = EditSchool;
 
 /***/ })
 /******/ ]);

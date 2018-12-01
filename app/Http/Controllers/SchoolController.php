@@ -32,4 +32,18 @@ class SchoolController extends Controller
 
 
     }
+
+    public function edit($id){
+
+
+
+        $edit = Schools::find($id);
+
+        return response()->json($edit);
+
+
+    }
+
+
+
 }

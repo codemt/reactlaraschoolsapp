@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::get('schools/all','SchoolController@index');
 Route::post('schools/create','SchoolController@store');
+Route::get('schools/{id}','SchoolController@edit');

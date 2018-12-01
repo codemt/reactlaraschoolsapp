@@ -52,7 +52,8 @@ import { Facebook } from 'react-content-loader'
                             
                         <tr>
                             <td>
-                             <a  href={schools.id}>  {schools.school_name} </a> 
+                            <Link to={'edit/'+schools.id }> {schools.school_name}</Link>
+                              { /*<a  href={schools.id}>  </a>  */ }
                             </td>
                             <td> {schools.school_address} </td>
                          </tr>
