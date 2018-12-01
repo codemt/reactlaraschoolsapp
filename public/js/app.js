@@ -68986,6 +68986,13 @@ var AddSchool = function (_Component) {
       });
     };
 
+    _this.navigate = function (e) {
+
+      e.preventDefault();
+
+      _History2.default.push('/');
+    };
+
     _this.state = {
 
       school_name: '',
@@ -69029,6 +69036,11 @@ var AddSchool = function (_Component) {
         _react2.default.createElement(
           'select',
           { className: 'form-control', onChange: this.handleChange, name: 'school_board' },
+          _react2.default.createElement(
+            'option',
+            null,
+            'Select Board'
+          ),
           _react2.default.createElement(
             'option',
             { value: 'SSC' },
@@ -69088,9 +69100,18 @@ var AddSchool = function (_Component) {
             SchoolBoard,
             SchoolAddress,
             _react2.default.createElement(
-              'button',
-              { onClick: this.submitData, className: 'btn btn-primary' },
-              'Submit'
+              'div',
+              { 'class': 'row' },
+              _react2.default.createElement(
+                'button',
+                { onClick: this.submitData, className: 'btn btn-primary col-md-3', style: { marginRight: 10 } },
+                'Submit'
+              ),
+              _react2.default.createElement(
+                'button',
+                { onClick: this.navigate, className: 'btn btn-primary col-md-3' },
+                'Back'
+              )
             )
           )
         )

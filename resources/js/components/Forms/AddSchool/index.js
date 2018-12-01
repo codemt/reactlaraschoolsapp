@@ -75,6 +75,15 @@ import history from '../../History';
           
 
   }
+
+
+  navigate = (e) =>{
+
+    e.preventDefault();
+
+    history.push('/');
+
+}
   
   render() {
     const SchoolName = (
@@ -90,6 +99,7 @@ import history from '../../History';
             <div className="form-group">
             <label htmlFor="exampleSelect1">School Board</label>
             <select className="form-control" onChange={this.handleChange}  name="school_board" >
+            <option>Select Board</option>
             <option value="SSC">SSC</option>
             <option value="CBSC">CBSC</option>
             <option value="ICSC">ICSC</option>
@@ -121,7 +131,10 @@ import history from '../../History';
                 </div>
                 {SchoolBoard}
                 {SchoolAddress}
-                <button   onClick={this.submitData} className="btn btn-primary">Submit</button>
+                <div class="row">
+                <button   onClick={this.submitData} className="btn btn-primary col-md-3" style={{marginRight:10}}>Submit</button>
+                <button   onClick={this.navigate} className="btn btn-primary col-md-3">Back</button>
+                </div>
                 </fieldset>
                 </form>
          </div>
