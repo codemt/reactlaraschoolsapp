@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
+import { Link  , Redirect } from 'react-router-dom';
 import logo from '../Spinners/logo.svg';
 import { Pagination } from 'react-js-pagination';
 import Spinner from '../Spinners/index';
@@ -52,7 +52,7 @@ import { Facebook } from 'react-content-loader'
                             
                         <tr>
                             <td>
-                            <Link to={'edit/'+schools.id }> {schools.school_name}</Link>
+                            <Link to={'/edit/'+schools.id }> {schools.school_name}</Link>
                               { /*<a  href={schools.id}>  </a>  */ }
                             </td>
                             <td> {schools.school_address} </td>

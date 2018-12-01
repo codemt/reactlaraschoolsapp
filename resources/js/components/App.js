@@ -112,7 +112,7 @@ componentDidMount() {
                     <Route  path='/thane' exact strict component={Thane}/>
                     <Route  path='/addschool' exact strict component={AddSchool}/>
                     <Route  path='/spinner' exact strict component={Spinner}/>
-                    <Route  path='/edit/:id' component={EditSchool}/>
+                    <Route  path='/edit/:id' exact strict  component={EditSchool}  />
             </div>
         </Router>
     )

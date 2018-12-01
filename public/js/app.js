@@ -38758,7 +38758,7 @@ var App = function (_Component) {
                          _react2.default.createElement(_reactRouterDom.Route, { path: '/thane', exact: true, strict: true, component: _Thane2.default }),
                          _react2.default.createElement(_reactRouterDom.Route, { path: '/addschool', exact: true, strict: true, component: _index2.default }),
                          _react2.default.createElement(_reactRouterDom.Route, { path: '/spinner', exact: true, strict: true, component: _Spinners2.default }),
-                         _react2.default.createElement(_reactRouterDom.Route, { path: '/edit/:id', component: _EditSchool2.default })
+                         _react2.default.createElement(_reactRouterDom.Route, { path: '/edit/:id', exact: true, strict: true, component: _EditSchool2.default })
                     )
                );
           }
@@ -64618,7 +64618,7 @@ var SchoolsList = function (_Component) {
                                         null,
                                         _react2.default.createElement(
                                             _reactRouterDom.Link,
-                                            { to: 'edit/' + schools.id },
+                                            { to: '/edit/' + schools.id },
                                             ' ',
                                             schools.school_name
                                         )
@@ -69156,17 +69156,19 @@ var EditSchool = function (_Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
 
-      this.editSchool();
+      var id = this.props.match.params.id;
+      console.log(this.props.match.params.id);
+      this.editSchool(id);
       console.log('i am loaded');
     }
   }, {
     key: 'editSchool',
-    value: function editSchool() {
+    value: function editSchool(id) {
       var _this2 = this;
 
       console.log('called');
 
-      fetch('api/schools/{id}').then(function (response) {
+      fetch('/api/edit/schools/' + id).then(function (response) {
         return response.json();
       }).then(function (responseJson) {
         console.log(responseJson);
@@ -69179,19 +69181,86 @@ var EditSchool = function (_Component) {
     key: 'render',
     value: function render() {
 
+      var schoolname = this.state.data.school_name;
+
+      var SchoolName = _react2.default.createElement('input', { type: 'text', onChange: this.handleChange, className: 'form-control', name: 'school_name', 'aria-describedby': 'emailHelp', placeholder: 'Enter School Name', value: schoolname });
+
+      var SchoolBoard = _react2.default.createElement(
+        'div',
+        { className: 'form-group' },
+        _react2.default.createElement(
+          'label',
+          { htmlFor: 'exampleSelect1' },
+          'School Board'
+        ),
+        _react2.default.createElement(
+          'select',
+          { className: 'form-control', onChange: this.handleChange, name: 'school_board' },
+          _react2.default.createElement(
+            'option',
+            { value: 'SSC' },
+            'SSC'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'CBSC' },
+            'CBSC'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'ICSC' },
+            'ICSC'
+          ),
+          _react2.default.createElement(
+            'option',
+            { value: 'International' },
+            'International'
+          )
+        )
+      );
+      var SchoolAddress = _react2.default.createElement(
+        'div',
+        { className: 'form-group' },
+        _react2.default.createElement(
+          'label',
+          { htmlFor: 'exampleTextarea' },
+          'School Address'
+        ),
+        _react2.default.createElement('textarea', { className: 'form-control', onChange: this.handleChange, name: 'school_address', rows: '3' })
+      );
+
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'container' },
         _react2.default.createElement(
-          'p',
+          'form',
           null,
-          ' Edit School here '
-        ),
-        _react2.default.createElement('br', null),
-        _react2.default.createElement(
-          'p',
-          null,
-          ' Edit School '
+          _react2.default.createElement(
+            'fieldset',
+            null,
+            _react2.default.createElement(
+              'div',
+              { className: 'form-group' },
+              _react2.default.createElement(
+                'label',
+                { htmlFor: 'exampleInputEmail1' },
+                'Name of School'
+              ),
+              SchoolName,
+              _react2.default.createElement(
+                'small',
+                { id: 'emailHelp', className: 'form-text text-muted' },
+                'We\'ll never share your private data with anyone else.'
+              )
+            ),
+            SchoolBoard,
+            SchoolAddress,
+            _react2.default.createElement(
+              'button',
+              { onClick: this.submitData, className: 'btn btn-primary' },
+              'Submit'
+            )
+          )
         )
       );
     }
