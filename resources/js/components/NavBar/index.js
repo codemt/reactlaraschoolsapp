@@ -5,7 +5,7 @@ class NavBar extends Component {
     return (
         
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <NavLink className="navbar-brand"  to="/home" activeClassName="active">Schools of Mumbai</NavLink>
+                <NavLink className="navbar-brand"  to="/" activeClassName="active">Schools of Mumbai</NavLink>
                 { /*<a className="navbar-brand" href="/">Schools of Mumbai</a> */ }
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>

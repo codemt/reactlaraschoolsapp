@@ -105,7 +105,7 @@ componentDidMount() {
         <Router history={history}>
              <div>
                      <NavBar />
-                     <Route path='/home' exact strict component={HomePageContainer} />
+                     <Route path='/' exact strict component={HomePageContainer} />
                     <Route  path='/central' exact strict component={Central}/>
                     <Route  path='/harbor' exact strict component={Harbor}/>
                     <Route  path='/western' exact strict component={Western}/>

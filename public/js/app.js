@@ -38751,7 +38751,7 @@ var App = function (_Component) {
                          'div',
                          null,
                          _react2.default.createElement(_NavBar2.default, null),
-                         _react2.default.createElement(_reactRouterDom.Route, { path: '/home', exact: true, strict: true, component: _homePageContainer2.default }),
+                         _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, strict: true, component: _homePageContainer2.default }),
                          _react2.default.createElement(_reactRouterDom.Route, { path: '/central', exact: true, strict: true, component: _Central2.default }),
                          _react2.default.createElement(_reactRouterDom.Route, { path: '/harbor', exact: true, strict: true, component: _Harbor2.default }),
                          _react2.default.createElement(_reactRouterDom.Route, { path: '/western', exact: true, strict: true, component: _Western2.default }),
@@ -61540,7 +61540,7 @@ var NavBar = function (_Component) {
                 { className: 'navbar navbar-expand-lg navbar-light bg-light' },
                 _react2.default.createElement(
                     _reactRouterDom.NavLink,
-                    { className: 'navbar-brand', to: '/home', activeClassName: 'active' },
+                    { className: 'navbar-brand', to: '/', activeClassName: 'active' },
                     'Schools of Mumbai'
                 ),
                 _react2.default.createElement(
@@ -68977,7 +68977,7 @@ var AddSchool = function (_Component) {
         setTimeout(function () {
           // return <img alt="loader"  src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
           // window.location = "/home";
-          _History2.default.push('/home');
+          _History2.default.push('/');
         }, 1000);
         // return <Redirect to='/inquiries' />
       }).catch(function (error) {
@@ -69127,6 +69127,10 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _History = __webpack_require__(45);
+
+var _History2 = _interopRequireDefault(_History);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -69145,90 +69149,107 @@ var EditForm = function (_Component) {
   }
 
   _createClass(EditForm, [{
-    key: "render",
+    key: 'navigate',
+    value: function navigate(e) {
+
+      e.preventDefault();
+
+      _History2.default.push('/');
+    }
+  }, {
+    key: 'render',
     value: function render() {
 
-      var SchoolName = _react2.default.createElement("input", { type: "text", onChange: this.handleChange, className: "form-control", name: "school_name", "aria-describedby": "emailHelp", placeholder: "Enter School Name", value: this.props.edit.school_name });
+      var SchoolName = _react2.default.createElement('input', { type: 'text', onChange: this.handleChange, className: 'form-control', name: 'school_name', 'aria-describedby': 'emailHelp', placeholder: 'Enter School Name', value: this.props.edit.school_name });
 
       var SchoolBoard = _react2.default.createElement(
-        "div",
-        { className: "form-group" },
+        'div',
+        { className: 'form-group' },
         _react2.default.createElement(
-          "label",
-          { htmlFor: "exampleSelect1" },
-          "School Board"
+          'label',
+          { htmlFor: 'exampleSelect1' },
+          'School Board'
         ),
         _react2.default.createElement(
-          "select",
-          { className: "form-control", onChange: this.handleChange, name: "school_board" },
+          'select',
+          { className: 'form-control', onChange: this.handleChange, name: 'school_board' },
           _react2.default.createElement(
-            "option",
+            'option',
             { value: this.props.edit.school_board },
             this.props.edit.school_board
           ),
           _react2.default.createElement(
-            "option",
-            { value: "SSC" },
-            "SSC"
+            'option',
+            { value: 'SSC' },
+            'SSC'
           ),
           _react2.default.createElement(
-            "option",
-            { value: "CBSC" },
-            "CBSC"
+            'option',
+            { value: 'CBSC' },
+            'CBSC'
           ),
           _react2.default.createElement(
-            "option",
-            { value: "ICSC" },
-            "ICSC"
+            'option',
+            { value: 'ICSC' },
+            'ICSC'
           ),
           _react2.default.createElement(
-            "option",
-            { value: "International" },
-            "International"
+            'option',
+            { value: 'International' },
+            'International'
           )
         )
       );
       var SchoolAddress = _react2.default.createElement(
-        "div",
-        { className: "form-group" },
+        'div',
+        { className: 'form-group' },
         _react2.default.createElement(
-          "label",
-          { htmlFor: "exampleTextarea" },
-          "School Address"
+          'label',
+          { htmlFor: 'exampleTextarea' },
+          'School Address'
         ),
-        _react2.default.createElement("textarea", { className: "form-control", onChange: this.handleChange, name: "school_address", value: this.props.edit.school_address, rows: "3" })
+        _react2.default.createElement('textarea', { className: 'form-control', onChange: this.handleChange, name: 'school_address', value: this.props.edit.school_address, rows: '3' })
       );
 
       return _react2.default.createElement(
-        "div",
-        { className: "container" },
+        'div',
+        { className: 'container' },
         _react2.default.createElement(
-          "form",
+          'form',
           null,
           _react2.default.createElement(
-            "fieldset",
+            'fieldset',
             null,
             _react2.default.createElement(
-              "div",
-              { className: "form-group" },
+              'div',
+              { className: 'form-group' },
               _react2.default.createElement(
-                "label",
-                { htmlFor: "exampleInputEmail1" },
-                "Name of School"
+                'label',
+                { htmlFor: 'exampleInputEmail1' },
+                'Name of School'
               ),
               SchoolName,
               _react2.default.createElement(
-                "small",
-                { id: "emailHelp", className: "form-text text-muted" },
-                "We'll never share your private data with anyone else."
+                'small',
+                { id: 'emailHelp', className: 'form-text text-muted' },
+                'We\'ll never share your private data with anyone else.'
               )
             ),
             SchoolBoard,
             SchoolAddress,
             _react2.default.createElement(
-              "button",
-              { onClick: this.submitData, className: "btn btn-primary" },
-              "Submit"
+              'div',
+              { 'class': 'row' },
+              _react2.default.createElement(
+                'button',
+                { onClick: this.submitData, className: 'btn btn-primary col-md-3', style: { marginRight: 10 } },
+                'Submit'
+              ),
+              _react2.default.createElement(
+                'button',
+                { onClick: this.navigate, className: 'btn btn-primary col-md-3' },
+                'Back'
+              )
             )
           )
         )

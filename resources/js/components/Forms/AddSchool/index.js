@@ -61,7 +61,7 @@ import history from '../../History';
              setTimeout(() => {
             // return <img alt="loader"  src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
             // window.location = "/home";
-            history.push('/home');
+            history.push('/');
 
 
             },1000)

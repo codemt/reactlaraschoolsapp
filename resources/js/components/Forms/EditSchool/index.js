@@ -1,6 +1,16 @@
 import React, { Component } from 'react'
-
+import history from '../../History';
 class EditForm extends Component {
+
+
+
+  navigate(e){
+
+      e.preventDefault();
+
+      history.push('/');
+
+  }
   render() {
 
 
@@ -48,7 +58,10 @@ class EditForm extends Component {
                 </div>
                 {SchoolBoard}
                 {SchoolAddress}
-                <button   onClick={this.submitData} className="btn btn-primary">Submit</button>
+                <div class="row">
+                <button   onClick={this.submitData} className="btn btn-primary col-md-3" style={{marginRight:10}}>Submit</button>  
+                <button   onClick={this.navigate} className="btn btn-primary col-md-3">Back</button>
+                </div>
                 </fieldset>
                 </form>
 
