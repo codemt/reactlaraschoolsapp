@@ -11,7 +11,7 @@ import AddSchool from './Forms/AddSchool/index';
 import history from './History';
 import Spinner from './Spinners';
 import ContentLoader from "react-content-loader"
-import EditSchool from './Forms/EditSchool';
+import EditSchool from './Forms/EditSchool/editContainer';
  class App extends Component {
 
 

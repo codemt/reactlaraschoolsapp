@@ -38617,9 +38617,9 @@ var _reactContentLoader = __webpack_require__(19);
 
 var _reactContentLoader2 = _interopRequireDefault(_reactContentLoader);
 
-var _EditSchool = __webpack_require__(164);
+var _editContainer = __webpack_require__(166);
 
-var _EditSchool2 = _interopRequireDefault(_EditSchool);
+var _editContainer2 = _interopRequireDefault(_editContainer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38758,7 +38758,7 @@ var App = function (_Component) {
                          _react2.default.createElement(_reactRouterDom.Route, { path: '/thane', exact: true, strict: true, component: _Thane2.default }),
                          _react2.default.createElement(_reactRouterDom.Route, { path: '/addschool', exact: true, strict: true, component: _index2.default }),
                          _react2.default.createElement(_reactRouterDom.Route, { path: '/spinner', exact: true, strict: true, component: _Spinners2.default }),
-                         _react2.default.createElement(_reactRouterDom.Route, { path: '/edit/:id', exact: true, strict: true, component: _EditSchool2.default })
+                         _react2.default.createElement(_reactRouterDom.Route, { path: '/edit/:id', exact: true, strict: true, component: _editContainer2.default })
                     )
                );
           }
@@ -69135,13 +69135,149 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var EditSchool = function (_Component) {
-  _inherits(EditSchool, _Component);
+var EditForm = function (_Component) {
+  _inherits(EditForm, _Component);
 
-  function EditSchool(props) {
-    _classCallCheck(this, EditSchool);
+  function EditForm() {
+    _classCallCheck(this, EditForm);
 
-    var _this = _possibleConstructorReturn(this, (EditSchool.__proto__ || Object.getPrototypeOf(EditSchool)).call(this, props));
+    return _possibleConstructorReturn(this, (EditForm.__proto__ || Object.getPrototypeOf(EditForm)).apply(this, arguments));
+  }
+
+  _createClass(EditForm, [{
+    key: "render",
+    value: function render() {
+
+      var SchoolName = _react2.default.createElement("input", { type: "text", onChange: this.handleChange, className: "form-control", name: "school_name", "aria-describedby": "emailHelp", placeholder: "Enter School Name", value: this.props.edit.school_name });
+
+      var SchoolBoard = _react2.default.createElement(
+        "div",
+        { className: "form-group" },
+        _react2.default.createElement(
+          "label",
+          { htmlFor: "exampleSelect1" },
+          "School Board"
+        ),
+        _react2.default.createElement(
+          "select",
+          { className: "form-control", onChange: this.handleChange, name: "school_board" },
+          _react2.default.createElement(
+            "option",
+            { value: this.props.edit.school_board },
+            this.props.edit.school_board
+          ),
+          _react2.default.createElement(
+            "option",
+            { value: "SSC" },
+            "SSC"
+          ),
+          _react2.default.createElement(
+            "option",
+            { value: "CBSC" },
+            "CBSC"
+          ),
+          _react2.default.createElement(
+            "option",
+            { value: "ICSC" },
+            "ICSC"
+          ),
+          _react2.default.createElement(
+            "option",
+            { value: "International" },
+            "International"
+          )
+        )
+      );
+      var SchoolAddress = _react2.default.createElement(
+        "div",
+        { className: "form-group" },
+        _react2.default.createElement(
+          "label",
+          { htmlFor: "exampleTextarea" },
+          "School Address"
+        ),
+        _react2.default.createElement("textarea", { className: "form-control", onChange: this.handleChange, name: "school_address", value: this.props.edit.school_address, rows: "3" })
+      );
+
+      return _react2.default.createElement(
+        "div",
+        { className: "container" },
+        _react2.default.createElement(
+          "form",
+          null,
+          _react2.default.createElement(
+            "fieldset",
+            null,
+            _react2.default.createElement(
+              "div",
+              { className: "form-group" },
+              _react2.default.createElement(
+                "label",
+                { htmlFor: "exampleInputEmail1" },
+                "Name of School"
+              ),
+              SchoolName,
+              _react2.default.createElement(
+                "small",
+                { id: "emailHelp", className: "form-text text-muted" },
+                "We'll never share your private data with anyone else."
+              )
+            ),
+            SchoolBoard,
+            SchoolAddress,
+            _react2.default.createElement(
+              "button",
+              { onClick: this.submitData, className: "btn btn-primary" },
+              "Submit"
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return EditForm;
+}(_react.Component);
+
+exports.default = EditForm;
+
+/***/ }),
+/* 165 */,
+/* 166 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _index = __webpack_require__(164);
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var EditContainer = function (_Component) {
+  _inherits(EditContainer, _Component);
+
+  function EditContainer(props) {
+    _classCallCheck(this, EditContainer);
+
+    var _this = _possibleConstructorReturn(this, (EditContainer.__proto__ || Object.getPrototypeOf(EditContainer)).call(this, props));
 
     _this.state = {
 
@@ -69152,7 +69288,7 @@ var EditSchool = function (_Component) {
     return _this;
   }
 
-  _createClass(EditSchool, [{
+  _createClass(EditContainer, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
 
@@ -69181,95 +69317,14 @@ var EditSchool = function (_Component) {
     key: 'render',
     value: function render() {
 
-      var schoolname = this.state.data.school_name;
-
-      var SchoolName = _react2.default.createElement('input', { type: 'text', onChange: this.handleChange, className: 'form-control', name: 'school_name', 'aria-describedby': 'emailHelp', placeholder: 'Enter School Name', value: schoolname });
-
-      var SchoolBoard = _react2.default.createElement(
-        'div',
-        { className: 'form-group' },
-        _react2.default.createElement(
-          'label',
-          { htmlFor: 'exampleSelect1' },
-          'School Board'
-        ),
-        _react2.default.createElement(
-          'select',
-          { className: 'form-control', onChange: this.handleChange, name: 'school_board' },
-          _react2.default.createElement(
-            'option',
-            { value: 'SSC' },
-            'SSC'
-          ),
-          _react2.default.createElement(
-            'option',
-            { value: 'CBSC' },
-            'CBSC'
-          ),
-          _react2.default.createElement(
-            'option',
-            { value: 'ICSC' },
-            'ICSC'
-          ),
-          _react2.default.createElement(
-            'option',
-            { value: 'International' },
-            'International'
-          )
-        )
-      );
-      var SchoolAddress = _react2.default.createElement(
-        'div',
-        { className: 'form-group' },
-        _react2.default.createElement(
-          'label',
-          { htmlFor: 'exampleTextarea' },
-          'School Address'
-        ),
-        _react2.default.createElement('textarea', { className: 'form-control', onChange: this.handleChange, name: 'school_address', rows: '3' })
-      );
-
-      return _react2.default.createElement(
-        'div',
-        { className: 'container' },
-        _react2.default.createElement(
-          'form',
-          null,
-          _react2.default.createElement(
-            'fieldset',
-            null,
-            _react2.default.createElement(
-              'div',
-              { className: 'form-group' },
-              _react2.default.createElement(
-                'label',
-                { htmlFor: 'exampleInputEmail1' },
-                'Name of School'
-              ),
-              SchoolName,
-              _react2.default.createElement(
-                'small',
-                { id: 'emailHelp', className: 'form-text text-muted' },
-                'We\'ll never share your private data with anyone else.'
-              )
-            ),
-            SchoolBoard,
-            SchoolAddress,
-            _react2.default.createElement(
-              'button',
-              { onClick: this.submitData, className: 'btn btn-primary' },
-              'Submit'
-            )
-          )
-        )
-      );
+      return _react2.default.createElement(_index2.default, { edit: this.state.data });
     }
   }]);
 
-  return EditSchool;
+  return EditContainer;
 }(_react.Component);
 
-exports.default = EditSchool;
+exports.default = EditContainer;
 
 /***/ })
 /******/ ]);

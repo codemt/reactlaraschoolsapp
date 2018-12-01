@@ -1,62 +1,13 @@
 import React, { Component } from 'react'
 
- class EditSchool extends Component {
-
-
-    constructor(props){
-
-
-        super(props);
-        this.state = {
-
-
-          data : [],  
-
-        }
-
-    }
-
-
-
-    componentDidMount(){
-
-
-      var id = this.props.match.params.id;
-      console.log(this.props.match.params.id);
-      this.editSchool(id);
-      console.log('i am loaded');
-
-
-    }
-
-    editSchool(id){
-
-      console.log('called');
-
-            fetch('/api/edit/schools/'+id)
-          .then((response) => response.json())
-          .then((responseJson) => {
-            console.log(responseJson);
-            this.setState({data : responseJson,animating:false});
-
-          })
-          .catch((error) => {
-            console.error(error);
-          });
-
-
-  }
-
-
-
+class EditForm extends Component {
   render() {
 
-    const schoolname = this.state.data.school_name;
 
     const SchoolName = (
 
       
-      <input type="text" onChange={this.handleChange}  className="form-control" name="school_name" aria-describedby="emailHelp" placeholder="Enter School Name"   value={schoolname} />
+      <input type="text" onChange={this.handleChange}  className="form-control" name="school_name" aria-describedby="emailHelp" placeholder="Enter School Name"   value={this.props.edit.school_name} />
     
 
   );
@@ -65,7 +16,8 @@ import React, { Component } from 'react'
 
           <div className="form-group">
           <label htmlFor="exampleSelect1">School Board</label>
-          <select className="form-control" onChange={this.handleChange}  name="school_board" >
+          <select className="form-control" onChange={this.handleChange} name="school_board" >
+          <option value={this.props.edit.school_board}>{this.props.edit.school_board}</option>
           <option value="SSC">SSC</option>
           <option value="CBSC">CBSC</option>
           <option value="ICSC">ICSC</option>
@@ -77,17 +29,16 @@ import React, { Component } from 'react'
 
       <div className="form-group">
       <label htmlFor="exampleTextarea">School Address</label>
-      <textarea className="form-control" onChange={this.handleChange}  name="school_address"  rows="3"></textarea>
+      <textarea className="form-control" onChange={this.handleChange}  name="school_address" value={this.props.edit.school_address}  rows="3"></textarea>
       </div>
 
 
   );
     
-    
+
     return (
-
-
-             <div className="container">
+   
+      <div className="container">
                 <form>
                 <fieldset>
                 <div className="form-group">
@@ -101,8 +52,8 @@ import React, { Component } from 'react'
                 </fieldset>
                 </form>
 
-            </div>
+     </div>
     )
   }
 }
-export default EditSchool;
+export default EditForm;
